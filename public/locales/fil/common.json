@@ -1,0 +1,54 @@
+{
+  "site_name": "BetterAllen.org",
+  "site_description": "Isang portal na pinapatakbo ng komunidad para sa Munisipalidat ng Allen",
+  "hero": {
+    "title": "BetterAllen.org",
+    "subtitle": "Isang portal na pinapatakbo ng komunidad upang mahanap ang impormasyon ng Pamahalaan ng Munisipalidad ng Allen, Northern Samar",
+    "nationalId": "Pambansang Pagkakakilanlan",
+    "birthCertificate": "Sertipikong Tagapanganak",
+    "businessRegistration": "Pagpaparehistro ng Negosyo"
+  },
+  "services": {
+    "title": "Mga Serbisyo & Impormasyon",
+    "governmentServices": "Mga Serbisyong Pamahalaan",
+    "description": "Mabilis at madaling makapag-access ng mga opisyal na serbisyo ng pamahalaan. Mahanap ang kailangan mo para sa pagkamamamayan, negosyo, edukasyon, at marami pang iba.",
+    "viewAll": "Tingnan ang Lahat ng Mga Serbisyo",
+    "viewAllCategory": "Tingnan Lahat"
+  },
+  "governmentActivity": {
+    "title": "Aktibidad ng Pamahalaan",
+    "description": "Manatiling updated sa pinakabagong mga aktibidad at anunsyo ng pamahalaan."
+  },
+  "weather": {
+    "title": "Mga Update sa Panahon"
+  },
+  "forex": {
+    "title": "Mga Rate ng Foreign Exchange"
+  },
+  "news": {
+    "title": "Pinakabagong Balita at Update"
+  },
+  "footer": {
+    "copyright": "© 2026 BetterGov. Ang lahat ng nilalaman ay nasa pampublikong domain maliban kung iba ang inilaan."
+  },
+  "navbar": {
+    "government": "Pamahalaan",
+    "services": "Mga Serbisyo",
+    "hotlines": "Mga Hotline",
+    "holidays": "Mga Pista",
+    "about": "Tungkol sa Amin"
+  },
+  "joinUs": {
+    "stripTitle": "🚀 Sumali sa #CivicTech Revolution",
+    "stripSubtitle": "Tumulong na bumuo ng kinabukasan ng Pilipinas at pamamahala sa pamamagitan ng teknolohiya",
+    "joinNow": "Sumali Na",
+    "discord": "Discord",
+    "bannerTitle": "Sumali sa #CivicTech Revolution",
+    "bannerSubtitle": "Tumulong na bumuo ng kinabukasan ng Pilipinas at pamamahala sa pamamagitan ng teknolohiya.",
+    "bannerHighlight": "Pinangunahan ng mga boluntaryo. Open source. Pinapatakbo ng komunidad.",
+    "joinMovement": "Sumali sa Aming Kilusan",
+    "or": "o",
+    "joinDiscord": "Sumali sa Discord",
+    "features": "🚀 Imprastruksyon • 💡 Mentorship • 🤝 Komunidad • 🏢 Opisina"
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "site_name": "Lapu Lapu City Portal",
-  "site_description": "A community-run portal for the Lapu Lapu City",
+  "site_name": "BetterAllen.org",
+  "site_description": "A community-run portal for the Municipality of Allen",
   "hero": {
-    "title": "Welcome to BetterGov.ph",
-    "subtitle": "A community-run portal to find information of the Lapu Lapu City Government",
+    "title": "BetterAllen.org",
+    "subtitle": "A community-run portal to find information of the Municipality of Allen, Northern Samar",
     "nationalId": "National ID",
     "birthCertificate": "Birth Certificate",
     "businessRegistration": "Business Registration"
@@ -29,13 +29,14 @@
     "title": "Latest News & Updates"
   },
   "footer": {
-    "copyright": "© 2025 BetterGov. All content is public domain unless otherwise specified."
+    "copyright": "© 2026 BetterGov. All content is public domain unless otherwise specified."
   },
   "navbar": {
     "government": "Government",
     "services": "Services",
     "hotlines": "Hotlines",
-    "holidays": "Holidays"
+    "holidays": "Holidays",
+    "about": "About"
   },
   "joinUs": {
     "stripTitle": "🚀 Join the #CivicTech Revolution",

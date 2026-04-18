@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         description="Official website of your local government. Access government services, information, and resources."
         keywords="government, local government, services, public services, civic services"
       />
-      <main className="flex-grow">
+      <main className="grow">
         <Hero />
         <ServicesSection />
         <GovernmentActivitySection />

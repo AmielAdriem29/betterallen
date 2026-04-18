@@ -10,8 +10,10 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left section with title and search */}
           <div className="animate-fade-in">
-            <Text transform="uppercase">Welcome to</Text>
-            <Heading>{import.meta.env.VITE_GOVERNMENT_NAME}</Heading>
+            <Text transform="uppercase" className="font-bold">
+              Welcome to
+            </Text>
+            <Heading>{t('hero.title')}</Heading>
             <Text>{t('hero.subtitle')}</Text>
           </div>
         </div>

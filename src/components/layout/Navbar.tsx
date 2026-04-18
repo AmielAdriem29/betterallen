@@ -1,22 +1,14 @@
 import React, { useState } from 'react';
-import {
-  X,
-  Menu,
-  ChevronDown,
-  Globe,
-  Search,
-  CheckCircle2,
-} from 'lucide-react';
+import { X, Menu, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { mainNavigation } from '../../data/navigation';
-import type { LanguageType } from '../../types/index';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { LANGUAGES } from '../../i18n/languages';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const { t, i18n } = useTranslation('common');
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -32,10 +24,6 @@ const Navbar: React.FC = () => {
 
   const toggleSubmenu = (label: string) => {
     setActiveMenu(activeMenu === label ? null : label);
-  };
-
-  const changeLanguage = (newLanguage: LanguageType) => {
-    i18n.changeLanguage(newLanguage);
   };
 
   return (
@@ -74,19 +62,6 @@ const Navbar: React.FC = () => {
             >
               Hotlines
             </a>
-            <div className="hidden md:block">
-              <select
-                value={i18n.language}
-                onChange={e => changeLanguage(e.target.value as LanguageType)}
-                className="text-xs border border-gray-300 rounded px-2 py-1 bg-white text-gray-700 hover:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600 focus:border-primary-600"
-              >
-                {Object.entries(LANGUAGES).map(([code, lang]) => (
-                  <option key={code} value={code}>
-                    {lang.nativeName}
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
         </div>
       </div>
@@ -115,6 +90,7 @@ const Navbar: React.FC = () => {
 
           {/* Desktop navigation */}
           <div className="hidden lg:flex items-center space-x-8 pr-24">
+            {/* Main navigation items with dropdowns */}
             {mainNavigation.map(item => (
               <div key={item.label} className="relative group">
                 <a
@@ -150,19 +126,8 @@ const Navbar: React.FC = () => {
             ))}
           </div>
           <div className="hidden lg:flex items-center space-x-6">
-            <Link
-              to="/about"
-              className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              to="/search"
-              className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              <Search className="h-4 w-4 mr-1" />
-              Search
-            </Link>
+            <LanguageSwitcher />
+
             {/* <Link
               to="/sitemap"
               className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
@@ -191,6 +156,7 @@ const Navbar: React.FC = () => {
       {/* Mobile menu */}
       <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="container mx-auto px-2 pt-2 pb-4 space-y-1 border-t border-gray-200 bg-white">
+          {/* Main navigation items with mobile submenu */}
           {mainNavigation.map(item => (
             <div key={item.label}>
               <button
@@ -206,6 +172,7 @@ const Navbar: React.FC = () => {
                   />
                 )}
               </button>
+              {/* Submenu for mobile */}
               {item.children && activeMenu === item.label && (
                 <div className="pl-6 py-2 space-y-1 bg-gray-50">
                   {item.children.map(child => (
@@ -222,49 +189,9 @@ const Navbar: React.FC = () => {
               )}
             </div>
           ))}
-          <Link
-            to="/join-us"
-            onClick={closeMenu}
-            className="block px-4 py-2 text-base font-semibold text-primary-600 hover:bg-primary-50 hover:text-primary-700"
-          >
-            🚀 Join Us
-          </Link>
-          <Link
-            to="/about"
-            onClick={closeMenu}
-            className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-500"
-          >
-            About
-          </Link>
-          <Link
-            to="/search"
-            onClick={closeMenu}
-            className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-500"
-          >
-            Search
-          </Link>
-          <Link
-            to="/sitemap"
-            onClick={closeMenu}
-            className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-500"
-          >
-            Sitemap
-          </Link>
+
           <div className="px-4 py-3 border-t border-gray-200">
-            <div className="flex items-center">
-              <Globe className="h-5 w-5 text-gray-800 mr-2" />
-              <select
-                value={i18n.language}
-                onChange={e => changeLanguage(e.target.value as LanguageType)}
-                className="text-sm border border-gray-300 rounded px-2 py-1 bg-white text-gray-700 hover:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600 focus:border-primary-600"
-              >
-                {Object.entries(LANGUAGES).map(([code, lang]) => (
-                  <option key={code} value={code}>
-                    {lang.nativeName}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>

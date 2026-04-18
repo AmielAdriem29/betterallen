@@ -25,6 +25,10 @@ export const mainNavigation: NavigationItem[] = [
     label: 'Government',
     href: '/government/departments',
   },
+  {
+    label: 'About',
+    href: '/about',
+  },
 ];
 
 export const footerNavigation = {
