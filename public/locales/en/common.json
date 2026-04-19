@@ -6,14 +6,50 @@
     "subtitle": "A community-run portal to find information of the Municipality of Allen, Northern Samar",
     "nationalId": "National ID",
     "birthCertificate": "Birth Certificate",
-    "businessRegistration": "Business Registration"
+    "businessRegistration": "Business Registration",
+    "popular_services": "Popular Services",
+    "search_service": "Search Service",
+    "search_placeholder": "Search services...",
+    "browse_services": "Browse Services",
+    "contact_us": "Contact Us",
+    "no_results": "No results found"
   },
   "services": {
     "title": "Services & Information",
     "governmentServices": "Government Services",
     "description": "Access official government services quickly and easily. Find what you need for citizenship, business, education, and more.",
     "viewAll": "View All Services",
-    "viewAllCategory": "View All"
+    "viewAllCategory": "View All",
+    "business": {
+      "category": "Business"
+    },
+    "health-services": {
+      "category": "Health"
+    },
+    "education": {
+      "category": "Education"
+    },
+    "garbage-waste-disposal": {
+      "category": "Waste"
+    },
+    "environment": {
+      "category": "Environment"
+    },
+    "housing-land-use": {
+      "category": "Housing"
+    },
+    "social-welfare": {
+      "category": "Social Welfare"
+    },
+    "agriculture-fisheries": {
+      "category": "Agriculture & Fisheries"
+    },
+    "infrastructure-public-works": {
+      "category": "Infrastructure & Public Works"
+    },
+    "disaster-preparedness": {
+      "category": "Disaster Preparedness"
+    }
   },
   "governmentActivity": {
     "title": "Government Activity",
@@ -32,6 +68,7 @@
     "copyright": "© 2026 BetterGov. All content is public domain unless otherwise specified."
   },
   "navbar": {
+    "home": "Home",
     "government": "Government",
     "services": "Services",
     "hotlines": "Hotlines",

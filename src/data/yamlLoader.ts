@@ -12,6 +12,7 @@ export interface Category {
   slug: string;
   description: string;
   icon: string;
+  type?: string; // e.g., 'service', 'tourism', etc.
   subcategories?: Subcategory[]; // Keep for backward compatibility
 }
 

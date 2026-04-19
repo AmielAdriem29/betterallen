@@ -6,14 +6,50 @@
     "subtitle": "Isang portal na pinapatakbo ng komunidad upang mahanap ang impormasyon ng Pamahalaan ng Munisipalidad ng Allen, Northern Samar",
     "nationalId": "Pambansang Pagkakakilanlan",
     "birthCertificate": "Sertipikong Tagapanganak",
-    "businessRegistration": "Pagpaparehistro ng Negosyo"
+    "businessRegistration": "Pagpaparehistro ng Negosyo",
+    "popular_services": "Mga Sikat na Serbisyo",
+    "search_service": "Maghanap ng Serbisyo",
+    "search_placeholder": "Maghanap ng mga serbisyo...",
+    "browse_services": "Tuklasin ang Mga Serbisyo",
+    "contact_us": "Makipag-ugnayan sa Amin",
+    "no_results": "Walang nahanap na resulta"
   },
   "services": {
     "title": "Mga Serbisyo & Impormasyon",
     "governmentServices": "Mga Serbisyong Pamahalaan",
     "description": "Mabilis at madaling makapag-access ng mga opisyal na serbisyo ng pamahalaan. Mahanap ang kailangan mo para sa pagkamamamayan, negosyo, edukasyon, at marami pang iba.",
     "viewAll": "Tingnan ang Lahat ng Mga Serbisyo",
-    "viewAllCategory": "Tingnan Lahat"
+    "viewAllCategory": "Tingnan Lahat",
+    "business": {
+      "category": "Negosyo"
+    },
+    "health-services": {
+      "category": "Kalusugan"
+    },
+    "education": {
+      "category": "Edukasyon"
+    },
+    "garbage-waste-disposal": {
+      "category": "Basura"
+    },
+    "environment": {
+      "category": "Kapaligiran"
+    },
+    "housing-land-use": {
+      "category": "Pabahay"
+    },
+    "social-welfare": {
+      "category": "Kagalingang Panlipunan"
+    },
+    "agriculture-fisheries": {
+      "category": "Agrikultura at Pangisdaan"
+    },
+    "infrastructure-public-works": {
+      "category": "Imprastruktura at Pampublikong Gawain"
+    },
+    "disaster-preparedness": {
+      "category": "Paghahanda sa Sakuna"
+    }
   },
   "governmentActivity": {
     "title": "Aktibidad ng Pamahalaan",
@@ -32,6 +68,7 @@
     "copyright": "© 2026 BetterGov. Ang lahat ng nilalaman ay nasa pampublikong domain maliban kung iba ang inilaan."
   },
   "navbar": {
+    "home": "Bahay",
     "government": "Pamahalaan",
     "services": "Mga Serbisyo",
     "hotlines": "Mga Hotline",

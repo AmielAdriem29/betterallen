@@ -64,7 +64,9 @@ export default function ServicesSection({
                   </div>
 
                   <h3 className="text-lg font-semibold mb-4 text-gray-900 self-center">
-                    {category.category}
+                    {t(`services.${category.slug}.category`, {
+                      defaultValue: category.category,
+                    })}
                   </h3>
                 </div>
                 <Text className="text-gray-800">{category.description}</Text>

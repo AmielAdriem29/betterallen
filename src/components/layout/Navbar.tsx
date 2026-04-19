@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Menu, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { mainNavigation } from '../../data/navigation';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher';
 
@@ -9,6 +9,13 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const { t } = useTranslation();
+  const location = useLocation();
+
+  const isActivePage = (href: string): boolean => {
+    return (
+      location.pathname === href || location.pathname.startsWith(href + '/')
+    );
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -95,7 +102,11 @@ const Navbar: React.FC = () => {
               <div key={item.label} className="relative group">
                 <a
                   href={item.href}
-                  className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                  className={`flex items-center font-medium transition-colors ${
+                    isActivePage(item.href)
+                      ? 'text-primary-600 border-b-2 border-primary-600'
+                      : 'text-gray-700 hover:text-primary-600'
+                  }`}
                 >
                   {t(`navbar.${item.label.replace(' ', '').toLowerCase()}`)}
                   {item.children && (
@@ -116,7 +127,10 @@ const Navbar: React.FC = () => {
                           className="text-left block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                           role="menuitem"
                         >
-                          {child.label}
+                          {t(
+                            `services.${child.href.split('/').pop()}.category`,
+                            { defaultValue: child.label }
+                          )}
                         </Link>
                       ))}
                     </div>
@@ -161,7 +175,11 @@ const Navbar: React.FC = () => {
             <div key={item.label}>
               <button
                 onClick={() => toggleSubmenu(item.label)}
-                className="w-full flex justify-between items-center px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-500"
+                className={`w-full flex justify-between items-center px-4 py-2 text-base font-medium transition-colors ${
+                  isActivePage(item.href)
+                    ? 'bg-primary-50 text-primary-600'
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-primary-500'
+                }`}
               >
                 {t(`navbar.${item.label.toLowerCase()}`)}
                 {item.children && (
@@ -182,7 +200,9 @@ const Navbar: React.FC = () => {
                       onClick={closeMenu}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary-500"
                     >
-                      {child.label}
+                      {t(`services.${child.href.split('/').pop()}.category`, {
+                        defaultValue: child.label,
+                      })}
                     </Link>
                   ))}
                 </div>
