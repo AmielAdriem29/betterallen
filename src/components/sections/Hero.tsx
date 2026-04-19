@@ -22,7 +22,7 @@ export default function Hero() {
   const [searchQuery, setSearchQuery] = useState('');
   const debouncedSearchQuery = useDebounce(searchQuery, 200);
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
-  const [showResults, setShowResults] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
 
   const highlightText = (text: string, query: string) => {
     if (!query.trim()) return text;
@@ -47,7 +47,6 @@ export default function Hero() {
   useEffect(() => {
     if (!debouncedSearchQuery.trim()) {
       setSearchResults([]);
-      setShowResults(false);
       return;
     }
 
@@ -91,7 +90,6 @@ export default function Hero() {
       }
 
       setSearchResults(results.slice(0, 8)); // Limit to 8 results
-      setShowResults(true); // Always show dropdown, even if empty
     };
 
     search();
@@ -138,7 +136,8 @@ export default function Hero() {
                     type="text"
                     value={searchQuery}
                     onChange={e => setSearchQuery(e.target.value)}
-                    onFocus={() => searchQuery.trim() && setShowResults(true)}
+                    onFocus={() => setIsInputFocused(true)}
+                    onBlur={() => setIsInputFocused(false)}
                     placeholder={
                       t('hero.search_placeholder') || 'Search services...'
                     }
@@ -153,7 +152,7 @@ export default function Hero() {
                 </div>
 
                 {/* Search results hover card */}
-                {showResults && debouncedSearchQuery.trim() && (
+                {isInputFocused && debouncedSearchQuery.trim() && (
                   <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-10 max-h-96 overflow-y-auto">
                     {searchResults.length > 0 ? (
                       searchResults.map((result, idx) =>
@@ -163,7 +162,7 @@ export default function Hero() {
                             to={`/services/${result.slug}`}
                             onClick={() => {
                               setSearchQuery('');
-                              setShowResults(false);
+                              setIsInputFocused(false);
                             }}
                             className="block p-3 hover:bg-primary-50 border-b border-gray-100 last:border-b-0 transition-colors"
                           >
@@ -197,7 +196,7 @@ export default function Hero() {
                             to={`/services/${result.categorySlug}/${result.slug}`}
                             onClick={() => {
                               setSearchQuery('');
-                              setShowResults(false);
+                              setIsInputFocused(false);
                             }}
                             className="block px-4 py-3 hover:bg-primary-50 border-b border-gray-100 last:border-b-0 transition-colors"
                           >

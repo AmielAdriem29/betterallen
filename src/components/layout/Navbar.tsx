@@ -1,15 +1,154 @@
-import React, { useState } from 'react';
-import { X, Menu, ChevronDown, CheckCircle2 } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import {
+  X,
+  Menu,
+  ChevronDown,
+  CheckCircle2,
+  Thermometer,
+  Clock,
+} from 'lucide-react';
 import { mainNavigation } from '../../data/navigation';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher';
+import { Text } from '../ui/Text';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [temperature, setTemperature] = useState(() => {
+    try {
+      return localStorage.getItem('weather_temp') || '28';
+    } catch {
+      return '28';
+    }
+  });
+  const [lastWeatherFetchTime, setLastWeatherFetchTime] = useState<number>(
+    () => {
+      try {
+        return parseInt(localStorage.getItem('weather_last_fetch') || '0', 10);
+      } catch {
+        return 0;
+      }
+    }
+  );
+
+  const currencies = ['USD', 'EUR', 'JPY', 'GBP', 'SGD'];
+  const currencySymbols: Record<string, string> = {
+    USD: '$',
+    EUR: '€',
+    JPY: '¥',
+    GBP: '£',
+    SGD: '$',
+  };
+
+  const [exchangeRates, setExchangeRates] = useState<Record<string, number>>(
+    () => {
+      try {
+        const cached = localStorage.getItem('exchange_rates');
+        return cached ? JSON.parse(cached) : {};
+      } catch {
+        return {};
+      }
+    }
+  );
+  const [lastRateFetchTime, setLastRateFetchTime] = useState<number>(() => {
+    try {
+      return parseInt(localStorage.getItem('exchange_last_fetch') || '0', 10);
+    } catch {
+      return 0;
+    }
+  });
+  const [currentCurrencyIndex, setCurrentCurrencyIndex] = useState(0);
   const { t } = useTranslation();
   const location = useLocation();
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const response = await fetch(
+          'https://api.open-meteo.com/v1/forecast?latitude=12.5006&longitude=124.2849&current=temperature_2m'
+        );
+        const data = await response.json();
+        const temp = Math.round(data.current.temperature_2m);
+        const tempStr = temp.toString();
+        setTemperature(tempStr);
+        const now = Date.now();
+        setLastWeatherFetchTime(now);
+        try {
+          localStorage.setItem('weather_temp', tempStr);
+          localStorage.setItem('weather_last_fetch', now.toString());
+        } catch {
+          console.warn('Failed to save to cache');
+        }
+      } catch (error) {
+        console.error('Failed to fetch weather:', error);
+      }
+    };
+
+    // Check if an hour has passed since last fetch
+    const now = Date.now();
+    if (now - lastWeatherFetchTime >= 3600000) {
+      fetchWeather();
+    }
+  }, [lastWeatherFetchTime]);
+
+  useEffect(() => {
+    const fetchExchangeRates = async () => {
+      try {
+        const ratesObj: Record<string, number> = {};
+        for (const currency of currencies) {
+          const response = await fetch(
+            `https://api.exchangerate-api.com/v4/latest/${currency}`
+          );
+          const data = await response.json();
+          ratesObj[currency] = data.rates.PHP;
+        }
+        setExchangeRates(ratesObj);
+        const now = Date.now();
+        setLastRateFetchTime(now);
+        try {
+          localStorage.setItem('exchange_rates', JSON.stringify(ratesObj));
+          localStorage.setItem('exchange_last_fetch', now.toString());
+        } catch {
+          console.warn('Failed to save rates to cache');
+        }
+      } catch (error) {
+        console.error('Failed to fetch exchange rates:', error);
+      }
+    };
+
+    // Check if a day has passed since last fetch (86400000 ms = 1 day)
+    const now = Date.now();
+    if (now - lastRateFetchTime >= 86400000) {
+      fetchExchangeRates();
+    }
+  }, [lastRateFetchTime]);
+
+  // Cycle through currencies every 5 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentCurrencyIndex(prev => (prev + 1) % currencies.length);
+    }, 5000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const isActivePage = (href: string): boolean => {
     return (
@@ -35,8 +174,12 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
-      {/* Top bar with language switcher and additional links */}
-      <div className="border-b border-gray-200">
+      {/* Top bar with additional links */}
+      <div
+        className={`border-b border-gray-200 transition-all duration-200 overflow-hidden ${
+          isScrolled ? 'max-h-0' : 'max-h-10'
+        }`}
+      >
         <div className="container mx-auto px-4 flex justify-end items-center h-10">
           <div className="flex items-center space-x-4">
             <a
@@ -69,6 +212,63 @@ const Navbar: React.FC = () => {
             >
               Hotlines
             </a>
+          </div>
+        </div>
+      </div>
+
+      {/* currency exchange, temp, and date */}
+      <div
+        className={`bg-primary-800 transition-all duration-300 overflow-hidden${
+          isScrolled ? 'max-h-0' : 'max-h-14'
+        }`}
+      >
+        <div className="container mx-auto px-4 py-2">
+          <div className="flex items-center justify-end text-white text-sm gap-4">
+            <div key={currentCurrencyIndex} className="animate-fade-in">
+              <Text size="xs">
+                {(() => {
+                  const currency = currencies[currentCurrencyIndex];
+                  const rate = exchangeRates[currency] || '-';
+                  const symbol = currencySymbols[currency];
+                  return (
+                    <>
+                      {`${symbol}1 ${currency} = ₱${
+                        typeof rate === 'number' ? rate.toFixed(2) : rate
+                      }`}
+                    </>
+                  );
+                })()}
+              </Text>
+            </div>
+
+            <span className="inline text-gray-500 text-xs">|</span>
+            <Text size="xs" className="flex items-center gap-1">
+              <Thermometer className="h-4 w-4 inline" /> {temperature}°C
+            </Text>
+
+            <span className="hidden sm:inline text-gray-500 text-xs">|</span>
+            <Text
+              size="xs"
+              className="items-center gap-1 font-mono hidden sm:inline-flex"
+            >
+              <Clock className="h-3 w-3 inline" />{' '}
+              {(() => {
+                const dateStr = currentTime.toLocaleString('en-US', {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric',
+                  timeZone: 'Asia/Manila',
+                });
+                const timeStr = currentTime.toLocaleString('en-US', {
+                  hour: 'numeric',
+                  minute: '2-digit',
+                  second: '2-digit',
+                  hour12: true,
+                  timeZone: 'Asia/Manila',
+                });
+                return `${dateStr} · ${timeStr} PHT`;
+              })()}
+            </Text>
           </div>
         </div>
       </div>
