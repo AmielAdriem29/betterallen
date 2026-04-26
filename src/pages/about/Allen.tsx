@@ -39,14 +39,14 @@ const AboutAllen: React.FC = () => {
 
         {/* Key Statistics */}
         <div className="mb-12">
-          <Heading level={2}>Key Statistics</Heading>
+          <Heading level={2}>Allen at a glance</Heading>
           <div className="grid grid-cols-2 gap-4 mt-4 sm:grid-cols-4">
             {/* TODO: Replace with real stats */}
             {[
-              { label: 'Population', value: 'TODO' },
-              { label: 'Land Area', value: 'TODO' },
-              { label: 'Barangays', value: 'TODO' },
-              { label: 'Founded', value: 'TODO' },
+              { label: 'Population', value: '26,527' },
+              { label: 'Land Area', value: '47.60 km2' },
+              { label: 'Barangays', value: '20' },
+              { label: 'Founded', value: 'December 1, 1863' },
             ].map(stat => (
               <div
                 key={stat.label}
