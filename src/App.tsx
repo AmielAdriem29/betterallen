@@ -7,15 +7,23 @@ import ScrollToTop from './components/ui/ScrollToTop';
 import Services from './pages/Services';
 import Document from './pages/Document';
 import Government from './pages/Government';
+import About from './pages/about/index';
+import AboutAllen from './pages/about/Allen';
+import AboutBetterGov from './pages/about/BetterGov';
 import { Toaster } from './components/ui/sonner';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 
 function App() {
   return (
     <HelmetProvider>
       <Router>
         <NuqsAdapter>
-          <div className="min-h-screen flex flex-col">
+          <div className="flex flex-col min-h-screen">
             <Navbar />
             <ScrollToTop />
             <Routes>
@@ -32,6 +40,11 @@ function App() {
                 path="/government/:category/:documentSlug"
                 element={<Document categoryType="government" />}
               />
+              <Route path="/about" element={<About />}>
+                <Route index element={<Navigate to="/about/allen" replace />} />
+                <Route path="allen" element={<AboutAllen />} />
+                <Route path="bettergov" element={<AboutBetterGov />} />
+              </Route>
               <Route path="/:lang/:documentSlug" element={<Document />} />
               <Route path="/:documentSlug" element={<Document />} />
             </Routes>
