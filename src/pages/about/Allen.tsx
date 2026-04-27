@@ -64,33 +64,32 @@ const AboutAllen: React.FC = () => {
         </div>
       </div>
 
-      {/* Key Statistics */}
-      <div className="px-8 mb-12">
-        <div className="flex justify-center gap-5 p-5 lg:grid-cols-4">
-          {data.stats.map(stat => {
-            const Icon = resolveLucideIcon(stat.icon);
-            return (
-              <div
-                key={stat.label}
-                className="flex flex-col items-center justify-center bg-white border shadow-sm ext-center p w-70 h-60 rounded-xl"
-              >
-                <div className="inline-flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-lg bg-primary-50">
-                  <Icon className="w-10 h-10 text-primary-600" />
+      <Section className="p-1 mb-12 px-30">
+        {/* Key Statistics */}
+        <div className="mb-5 ">
+          <div className="flex justify-center gap-5 p-2 lg:grid-cols-4">
+            {data.stats.map(stat => {
+              const Icon = resolveLucideIcon(stat.icon);
+              return (
+                <div
+                  key={stat.label}
+                  className="flex flex-col items-center justify-center bg-white border shadow-sm ext-center p w-70 h-60 rounded-xl"
+                >
+                  <div className="inline-flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-lg bg-primary-50">
+                    <Icon className="w-10 h-10 text-primary-600" />
+                  </div>
+                  <Text className="text-2xl font-bold text-blue-900 max-w-none">
+                    {stat.value}
+                  </Text>
+                  <Text className="mt-1 text-sm font-medium text-gray-600 max-w-none">
+                    {stat.label}
+                  </Text>
                 </div>
-                <Text className="text-2xl font-bold text-blue-900 max-w-none">
-                  {stat.value}
-                </Text>
-                <Text className="mt-1 text-sm font-medium text-gray-600 max-w-none">
-                  {stat.label}
-                </Text>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
 
-      {/* Page content */}
-      <Section className="p-3 mb-12">
         {/* History */}
         <div className="mb-12">
           <Heading level={2}>History</Heading>
@@ -118,9 +117,19 @@ const AboutAllen: React.FC = () => {
         {/* Geography */}
         <div className="mb-12">
           <Heading level={2}>Geography</Heading>
-          <Text className="mt-4 text-gray-600 max-w-none">
-            {data.geography}
-          </Text>
+          <div className="flex flex-col gap-6 mt-4 lg:flex-row">
+            <Text className="text-gray-600 max-w-none lg:w-1/2">
+              {data.geography}
+            </Text>
+            <div className="h-64 overflow-hidden border shadow-sm lg:w-1/2 rounded-xl">
+              <iframe
+                title="Allen, Northern Samar Map"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=124.24%2C12.47%2C124.32%2C12.54&layer=mapnik&marker=12.505%2C124.280"
+                className="w-full h-full"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </Section>
     </>
