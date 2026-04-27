@@ -117,15 +117,54 @@ const AboutAllen: React.FC = () => {
         {/* Geography */}
         <div className="mb-12">
           <Heading level={2}>Geography</Heading>
-          <div className="flex flex-col gap-6 mt-4 lg:flex-row">
-            <Text className="text-gray-600 max-w-none lg:w-1/2">
-              {data.geography}
-            </Text>
-            <div className="h-64 overflow-hidden border shadow-sm lg:w-1/2 rounded-xl">
+          <div className="flex flex-col gap-6 mt-6 lg:flex-row">
+            {/* Description card */}
+            <div className="lg:w-1/2">
+              <div className="p-6 border bg-primary-50 border-primary-100 rounded-xl">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary-600">
+                    <svg
+                      className="w-4 h-4 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  <Text className="text-sm font-semibold text-primary-700 max-w-none">
+                    Northern Samar, Eastern Visayas
+                  </Text>
+                </div>
+                <Text className="leading-relaxed text-gray-700 max-w-none">
+                  {data.geography}
+                </Text>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div className="overflow-hidden border border-gray-200 shadow-md lg:w-1/2 rounded-xl">
+              <div className="flex items-center gap-2 px-4 py-2 bg-primary-600">
+                <div className="w-2 h-2 bg-white rounded-full opacity-60" />
+                <Text className="text-xs font-medium text-white max-w-none">
+                  Allen, Northern Samar — Interactive Map
+                </Text>
+              </div>
               <iframe
                 title="Allen, Northern Samar Map"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=124.24%2C12.47%2C124.32%2C12.54&layer=mapnik&marker=12.505%2C124.280"
-                className="w-full h-full"
+                className="w-full h-72"
                 loading="lazy"
               />
             </div>
