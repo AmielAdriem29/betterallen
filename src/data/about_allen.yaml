@@ -1,0 +1,91 @@
+# Allen Municipality Data
+# Non-technical contributors can edit this file to update content on the About Allen page.
+
+name: Allen
+province: Northern Samar
+region: Eastern Visayas
+
+description: >
+  Allen is a coastal municipality in Northern Samar and the southern gateway between Luzon
+  and the Visayas. Sitting along the San Bernardino Strait, it is where the ferry from
+  Matnog, Sorsogon arrives — making it one of the most-travelled entry points into the
+  Eastern Visayas region.
+
+history: >
+  Allen was formally established on December 1, 1863, during the Spanish colonial period,
+  though the area had long been settled by coastal communities who depended on fishing and
+  trade along the strait. Over the centuries, Allen grew from a quiet seaside town into a
+  significant transit point — shaped by colonial administration, war, and the steady
+  movement of people between islands.
+
+geography: >
+  Allen occupies a narrow coastal strip along the northern tip of Samar, facing the San
+  Bernardino Strait to the north. The municipality covers 47.60 km² of land, with terrain
+  that transitions from a flat coastal shoreline into rolling hills inland. The strait
+  separates Samar from the Bicol Peninsula of Luzon, making Allen's position geographically
+  significant — it sits at the natural crossing point between two major island groups.
+  The town proper hugs the coast, while its 20 barangays spread inland and along adjacent
+  shorelines.
+
+economy: >
+  Allen's economy is anchored by fishing and the movement of goods and people through its
+  port. The San Bernardino Strait provides rich fishing grounds, and many residents make
+  their living from the sea — supplying local markets and nearby towns with fresh catch.
+  The RoRo (Roll-on/Roll-off) ferry terminal connecting Allen to Matnog, Sorsogon drives
+  consistent commercial activity: transport services, small trading, eateries, and informal
+  vendors all cluster around the port area. Agriculture — primarily coconut farming and
+  rice — supplements livelihoods further inland.
+
+stats:
+  - label: Population
+    value: "26,527"
+    sublabel: Population (2025 Census)
+    icon: Users
+
+  - label: Barangays
+    value: "20"
+    sublabel: Administrative divisions
+    asOf: As of 2025
+    icon: MapPin
+
+  - label: Land Area
+    value: 47.60 km²
+    sublabel: Total municipal coverage
+    asOf: As of 2025
+    icon: Map
+
+  - label: Founded
+    value: December 1, 1863
+    sublabel: Date of establishment
+    icon: Award
+
+timeline:
+  - year: Pre-1863
+    event: >
+      Coastal Waray settlements along the San Bernardino Strait; fishing and
+      inter-island trade sustain early communities.
+
+  - year: December 1, 1863
+    event: >
+      Allen formally established as a municipality under Spanish colonial
+      administration.
+
+  - year: Early 1900s
+    event: >
+      American period brings new civil governance structure; infrastructure
+      improvements begin across the municipality.
+
+  - year: 1942–1945
+    event: >
+      World War II affects the municipality; post-war reconstruction shapes
+      the modern town center.
+
+  - year: 1950s–1970s
+    event: >
+      Ferry route between Allen and Matnog formalizes, establishing Allen's
+      role as a regional gateway between Luzon and the Visayas.
+
+  - year: Present
+    event: >
+      Allen continues to grow as both a transit hub and a home to over 26,000
+      residents across 20 barangays.
