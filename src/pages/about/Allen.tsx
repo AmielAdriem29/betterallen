@@ -64,6 +64,31 @@ const AboutAllen: React.FC = () => {
         </div>
       </div>
 
+      {/* Key Statistics */}
+      <div className="px-8 mb-12">
+        <div className="flex justify-center gap-5 p-5 lg:grid-cols-4">
+          {data.stats.map(stat => {
+            const Icon = resolveLucideIcon(stat.icon);
+            return (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center justify-center bg-white border shadow-sm ext-center p w-70 h-60 rounded-xl"
+              >
+                <div className="inline-flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-lg bg-primary-50">
+                  <Icon className="w-10 h-10 text-primary-600" />
+                </div>
+                <Text className="text-2xl font-bold text-blue-900 max-w-none">
+                  {stat.value}
+                </Text>
+                <Text className="mt-1 text-sm font-medium text-gray-600 max-w-none">
+                  {stat.label}
+                </Text>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Page content */}
       <Section className="p-3 mb-12">
         {/* History */}
@@ -87,37 +112,6 @@ const AboutAllen: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Key Statistics */}
-        <div className="px-8 mb-12">
-          <div className="mb-8 text-center">
-            <Heading level={2}>Allen at a Glance</Heading>
-            <Text className="mt-2 text-gray-500 max-w-none">
-              Key statistics about our municipality
-            </Text>
-          </div>
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {data.stats.map(stat => {
-              const Icon = resolveLucideIcon(stat.icon);
-              return (
-                <div
-                  key={stat.label}
-                  className="p-6 text-center bg-white border shadow-sm rounded-xl"
-                >
-                  <div className="inline-flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-lg bg-primary-50">
-                    <Icon className="w-5 h-5 text-primary-600" />
-                  </div>
-                  <Text className="text-2xl font-bold text-gray-900 max-w-none">
-                    {stat.value}
-                  </Text>
-                  <Text className="mt-1 text-sm font-medium text-gray-700 max-w-none">
-                    {stat.label}
-                  </Text>
-                </div>
-              );
-            })}
           </div>
         </div>
 
