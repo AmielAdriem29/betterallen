@@ -69,20 +69,22 @@ const AboutAllen: React.FC = () => {
         {/* History */}
         <div className="mb-12">
           <Heading level={2}>History</Heading>
-          <Text className="mt-4 text-gray-600 max-w-none">{data.history}</Text>
-        </div>
+          <Text className="mt-2 mb-8 text-gray-500 max-w-none">
+            {data.history}
+          </Text>
 
-        {/* Timeline */}
-        <div className="mb-12">
-          <Heading level={2}>Timeline</Heading>
-          <div className="relative pl-6 mt-6 space-y-8 border-l-2 border-primary-200">
+          <div className="relative pl-8 space-y-6 border-l-2 border-primary-200">
             {data.timeline.map(entry => (
               <div key={entry.year} className="relative">
-                <div className="absolute -left-[1.65rem] top-1 w-3 h-3 rounded-full bg-primary-500 border-2 border-white" />
-                <Text className="mb-1 text-sm font-semibold text-primary-600 max-w-none">
-                  {entry.year}
-                </Text>
-                <Text className="text-gray-600 max-w-none">{entry.event}</Text>
+                <div className="absolute -left-[2.35rem] top-1.5 w-4 h-4 rounded-full bg-primary-500 border-4 border-white ring-2 ring-primary-300" />
+                <div className="p-4 transition-all duration-200 bg-white border border-gray-200 shadow-sm rounded-xl hover:border-primary-400 hover:shadow-md">
+                  <Text className="mb-1 text-sm font-bold text-primary-600 max-w-none">
+                    {entry.year}
+                  </Text>
+                  <Text className="text-sm text-gray-600 max-w-none">
+                    {entry.event}
+                  </Text>
+                </div>
               </div>
             ))}
           </div>
@@ -125,12 +127,6 @@ const AboutAllen: React.FC = () => {
           <Text className="mt-4 text-gray-600 max-w-none">
             {data.geography}
           </Text>
-        </div>
-
-        {/* Economy */}
-        <div className="mb-12">
-          <Heading level={2}>Economy</Heading>
-          <Text className="mt-4 text-gray-600 max-w-none">{data.economy}</Text>
         </div>
       </Section>
     </>
