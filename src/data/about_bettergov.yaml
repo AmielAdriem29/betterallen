@@ -1,0 +1,95 @@
+# BetterGov Initiative Data
+# Non-technical contributors can edit this file to update content on the About BetterGov page.
+
+name: BetterGov
+tagline: A Better Philippine Government Website
+url: https://bettergov.ph
+
+description: >
+  BetterGov is a community-led volunteer initiative building a better and more usable
+  Philippine national government website. It exists to break down the barriers that
+  outdated, broken, and inaccessible government portals have created for everyday Filipinos.
+
+mission: >
+  BetterGov's mission is simple: provide a "better" and "usable" website for the
+  Philippines. The project is volunteer-driven and open to anyone who wants to help
+  make government information easier to find, understand, and act on — regardless of
+  technical background.
+
+why: >
+  The current state of Philippine government websites, particularly the main portal
+  www.gov.ph, presents serious challenges for citizens. The site is outdated and
+  unmaintained, full of broken links, and plagued by inconsistent design and poor
+  accessibility. Similar problems exist across most government agency websites. These
+  aren't just inconveniences — they are barriers that prevent Filipinos from accessing
+  essential services and information they are entitled to.
+
+stats:
+  - label: License
+    value: CC0
+    sublabel: Public domain dedication
+    icon: Globe
+
+  - label: Status
+    value: Active
+    sublabel: Actively maintained
+    icon: Activity
+
+  - label: Docs
+    value: docs.bettergov.ph
+    sublabel: Project documentation
+    icon: BookOpen
+
+  - label: Contact
+    value: volunteers@bettergov.ph
+    sublabel: Get involved
+    icon: Mail
+
+benefits:
+  - audience: For Citizens
+    icon: Users
+    description: >
+      BetterGov makes government services easier to find and understand. With intuitive
+      navigation, accessible design, and accurate information, Filipinos can get what
+      they need without wading through broken links or confusing layouts.
+
+  - audience: For Local Governments
+    icon: Landmark
+    description: >
+      BetterGov demonstrates what modern, citizen-friendly government digital services
+      can look like — and provides a replicable model for LGUs looking to improve their
+      own online presence.
+
+timeline:
+  - year: The Problem
+    event: >
+      www.gov.ph and most Philippine government agency websites fall behind — outdated
+      content, broken links, inaccessible design, and poor user experience become
+      the norm.
+
+  - year: The Idea
+    event: >
+      A group of volunteers decides that waiting for a top-down fix isn't enough.
+      BetterGov is conceived as a community-led alternative — built in the open,
+      for everyone.
+
+  - year: Early Development
+    event: >
+      The project takes shape: a modern, responsive design is drafted, a
+      contributing guide and code of conduct are established, and the first
+      volunteers join the effort.
+
+  - year: Today
+    event: >
+      BetterGov continues to grow, welcoming developers, designers, writers,
+      translators, accessibility experts, and anyone who believes Filipinos
+      deserve better from their government's digital services.
+
+volunteer_roles:
+  - Frontend and backend developers
+  - UX/UI designers
+  - Content writers and editors
+  - Translators (Filipino and other local languages)
+  - Accessibility experts
+  - Project managers
+  - QA testers
