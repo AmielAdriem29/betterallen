@@ -67,19 +67,23 @@ const AboutAllen: React.FC = () => {
       <Section className="p-1 px-6 mb-12 sm:px-10 lg:px-20 xl:px-30">
         {/* Key Statistics */}
         <div className="mb-5">
-          <div className="flex flex-col gap-4 p-2 sm:flex-row sm:justify-center">
+          <div className="grid grid-cols-2 gap-4 p-2 sm:flex sm:flex-row sm:justify-center">
             {data.stats.map(stat => {
               const Icon = resolveLucideIcon(stat.icon);
               return (
                 <div
                   key={stat.label}
-                  className="flex flex-row items-center gap-4 px-6 py-4 bg-white border shadow-sm rounded-xl sm:flex-col sm:items-center sm:justify-center sm:gap-0 sm:w-44 sm:h-44 lg:w-56 lg:h-56"
+                  className="flex flex-col items-center justify-center gap-2 px-6 py-4 bg-white border shadow-sm rounded-xl sm:gap-0 sm:w-44 sm:h-44 lg:w-56 lg:h-48"
                 >
                   <div className="inline-flex items-center justify-center flex-shrink-0 w-10 h-10 rounded-lg bg-primary-50 sm:mb-4">
                     <Icon className="w-6 h-6 text-primary-600" />
                   </div>
-                  <div className="sm:text-center">
-                    <Text className="text-xl font-bold text-blue-900 max-w-none sm:text-2xl">
+                  <div className="text-center">
+                    <Text
+                      className={`font-bold text-blue-900 max-w-none ${
+                        stat.value.length > 6 ? 'text-sm' : 'text-xl'
+                      }`}
+                    >
                       {stat.value}
                     </Text>
                     <Text className="mt-0.5 text-sm font-medium text-gray-600 max-w-none">
