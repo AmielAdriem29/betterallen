@@ -175,7 +175,12 @@ src/
 └── types/              # TypeScript type definitions
 ```
 
-## 👥 Contributors
+## Contributors
+
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
+
+## 👥 Contributors for the BetterLGU Template
 
 - **[iyanski](https://github.com/iyanski)** — Project creator and maintainer
 - **[Nicu Listana](https://github.com/niculistana)** — Contributor
