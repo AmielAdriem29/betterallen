@@ -66,8 +66,7 @@ const AboutAllen: React.FC = () => {
 
       <Section className="p-1 px-6 mb-12 sm:px-10 lg:px-20 xl:px-30">
         {/* Key Statistics */}
-        <div className="mb-5 ">
-          {/* Mobile: 1x4 column. Desktop: 1x4 row of squares */}
+        <div className="mb-5">
           <div className="flex flex-col gap-4 p-2 sm:flex-row sm:justify-center">
             {data.stats.map(stat => {
               const Icon = resolveLucideIcon(stat.icon);
@@ -120,56 +119,56 @@ const AboutAllen: React.FC = () => {
         {/* Geography */}
         <div className="mb-12">
           <Heading level={2}>Geography</Heading>
-          <div className="flex flex-col gap-6 mt-6 lg:flex-row">
-            {/* Description card */}
-            <div className="lg:w-1/2">
-              <div className="p-6 border bg-primary-50 border-primary-100 rounded-xl">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary-600">
-                    <svg
-                      className="w-4 h-4 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
+
+          <div className="mt-6">
+            {/* Unified Container */}
+            <div className="overflow-hidden border bg-primary-50 border-primary-100 rounded-xl">
+              <div className="flex flex-col lg:flex-row">
+                {/* Description Side */}
+                <div className="p-8 lg:w-1/2">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary-600">
+                      <svg
+                        className="w-4 h-4 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                    </div>
+                    <Text className="text-sm font-bold tracking-wide uppercase text-primary-700">
+                      Northern Samar, Eastern Visayas
+                    </Text>
                   </div>
-                  <Text className="text-sm font-semibold text-primary-700 max-w-none">
-                    Northern Samar, Eastern Visayas
+                  <Text className="leading-relaxed text-gray-700 max-w-none">
+                    {data.geography}
                   </Text>
                 </div>
-                <Text className="leading-relaxed text-gray-700 max-w-none">
-                  {data.geography}
-                </Text>
-              </div>
-            </div>
 
-            {/* Map */}
-            <div className="overflow-hidden border border-gray-200 shadow-md lg:w-1/2 rounded-xl">
-              <div className="flex items-center gap-2 px-4 py-2 bg-primary-600">
-                <div className="w-2 h-2 bg-white rounded-full opacity-60" />
-                <Text className="text-xs font-medium text-white max-w-none">
-                  Allen, Northern Samar — Interactive Map
-                </Text>
+                {/* Integrated Map Side */}
+                <div className="relative flex items-stretch p-4 lg:p-6 lg:w-1/2">
+                  <div className="relative w-full overflow-hidden bg-white border shadow-inner rounded-xl border-primary-200/50">
+                    <iframe
+                      title="Allen, Northern Samar Map"
+                      src="https://maps.google.com/maps?q=12.5,124.282&z=14&output=embed"
+                      className="w-full h-80 lg:h-full min-h-[300px]"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
-              <iframe
-                title="Allen, Northern Samar Map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=124.24%2C12.47%2C124.32%2C12.54&layer=mapnik&marker=12.505%2C124.280"
-                className="w-full h-72"
-                loading="lazy"
-              />
             </div>
           </div>
         </div>
