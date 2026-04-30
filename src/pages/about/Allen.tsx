@@ -58,7 +58,7 @@ const AboutAllen: React.FC = () => {
           <Heading level={1} className="text-white">
             {data.name}, {data.province}
           </Heading>
-          <Text className="mt-4 text-primary-100 max-w-none sm:px-8 lg:px-16">
+          <Text className="mt-4 text-primary-100 max-w-none sm:px-8 lg:px-40">
             {data.description}
           </Text>
         </div>
