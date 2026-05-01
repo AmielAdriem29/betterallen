@@ -80,12 +80,12 @@ const Government: React.FC = () => {
       />
       <Section className="p-3 mb-12">
         <Breadcrumbs className="mb-8" />
-        <Icon className="h-8 w-8 mb-4 text-primary-600 rounded-md" />
+        <Icon className="w-8 h-8 mb-4 rounded-md text-primary-600" />
         <Heading>{categoryData.category || category}</Heading>
-        <Text className="text-gray-600 mb-6">{categoryData.description}</Text>
+        <Text className="mb-6 text-gray-600">{categoryData.description}</Text>
 
         {loading ? (
-          <div className="flex justify-center items-center p-8">
+          <div className="flex items-center justify-center p-8">
             <Text>Loading services...</Text>
           </div>
         ) : (
@@ -94,7 +94,7 @@ const Government: React.FC = () => {
               <Heading level={3}>{categoryIndex.title}</Heading>
             )}
             {categoryIndex.description && (
-              <Text className="text-gray-600 mb-4">
+              <Text className="mb-4 text-gray-600">
                 {categoryIndex.description}
               </Text>
             )}
@@ -118,7 +118,7 @@ const Government: React.FC = () => {
                             {subcategory.description}
                           </p>
                         )}
-                        <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800">
+                        <span className="inline-block px-2 py-1 mt-2 text-xs font-medium text-gray-800 bg-gray-100 rounded-sm">
                           {categoryData.category || category}
                         </span>
                       </CardContent>
@@ -143,7 +143,7 @@ const Government: React.FC = () => {
                             {subcategory.description}
                           </p>
                         )}
-                        <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800">
+                        <span className="inline-block px-2 py-1 mt-2 text-xs font-medium text-gray-800 bg-gray-100 rounded-sm">
                           {categoryData.category || category}
                         </span>
                       </CardContent>

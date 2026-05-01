@@ -6,90 +6,30 @@ tagline: A Better Philippine Government Website
 url: https://bettergov.ph
 
 description: >
-  BetterGov is a community-led volunteer initiative building a better and more usable
-  Philippine national government website. It exists to break down the barriers that
-  outdated, broken, and inaccessible government portals have created for everyday Filipinos.
+  BetterGov is a volunteer project by Filipinos, for Filipinos — built on the belief
+  that government information should be easy to find, easy to understand, and available
+  to everyone.
 
 mission: >
-  BetterGov's mission is simple: provide a "better" and "usable" website for the
-  Philippines. The project is volunteer-driven and open to anyone who wants to help
-  make government information easier to find, understand, and act on — regardless of
-  technical background.
+  BetterGov exists to make government information more accessible and more human.
+  The project is open to anyone who wants to help — developers, writers, designers,
+  and everyday citizens who believe public services should work for the public.
 
 why: >
-  The current state of Philippine government websites, particularly the main portal
-  www.gov.ph, presents serious challenges for citizens. The site is outdated and
-  unmaintained, full of broken links, and plagued by inconsistent design and poor
-  accessibility. Similar problems exist across most government agency websites. These
-  aren't just inconveniences — they are barriers that prevent Filipinos from accessing
-  essential services and information they are entitled to.
-
-stats:
-  - label: License
-    value: CC0
-    sublabel: Public domain dedication
-    icon: Globe
-
-  - label: Status
-    value: Active
-    sublabel: Actively maintained
-    icon: Activity
-
-  - label: Docs
-    value: docs.bettergov.ph
-    sublabel: Project documentation
-    icon: BookOpen
-
-  - label: Contact
-    value: volunteers@bettergov.ph
-    sublabel: Get involved
-    icon: Mail
+  Good governance starts with good communication. BetterGov was created to bridge
+  the gap between government services and the people who need them — making it easier
+  for every Filipino to understand their rights, access public services, and stay
+  informed about what their government is doing.
 
 benefits:
   - audience: For Citizens
     icon: Users
     description: >
-      BetterGov makes government services easier to find and understand. With intuitive
-      navigation, accessible design, and accurate information, Filipinos can get what
-      they need without wading through broken links or confusing layouts.
+      Clear, accessible, and up-to-date government information — so any Filipino can
+      find what they need quickly, without confusion or dead ends.
 
   - audience: For Local Governments
     icon: Landmark
     description: >
-      BetterGov demonstrates what modern, citizen-friendly government digital services
-      can look like — and provides a replicable model for LGUs looking to improve their
-      own online presence.
-
-timeline:
-  - year: The Problem
-    event: >
-      www.gov.ph and most Philippine government agency websites fall behind — outdated
-      content, broken links, inaccessible design, and poor user experience become
-      the norm.
-
-  - year: The Idea
-    event: >
-      A group of volunteers decides that waiting for a top-down fix isn't enough.
-      BetterGov is conceived as a community-led alternative — built in the open,
-      for everyone.
-
-  - year: Early Development
-    event: >
-      The project takes shape: a modern, responsive design is drafted, a
-      contributing guide and code of conduct are established, and the first
-      volunteers join the effort.
-
-  - year: Today
-    event: >
-      BetterGov continues to grow, welcoming developers, designers, writers,
-      translators, accessibility experts, and anyone who believes Filipinos
-      deserve better from their government's digital services.
-
-volunteer_roles:
-  - Frontend and backend developers
-  - UX/UI designers
-  - Content writers and editors
-  - Translators (Filipino and other local languages)
-  - Accessibility experts
-  - Project managers
-  - QA testers
+      A modern, open-source model that any LGU can learn from or build on to improve
+      their own digital presence and better serve their constituents.
