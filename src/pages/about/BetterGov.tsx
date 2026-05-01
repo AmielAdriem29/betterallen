@@ -55,7 +55,7 @@ const AboutBetterGov: React.FC = () => {
         </div>
       </div>
 
-      <Section className="p-1 px-6 mb-12 sm:px-10 lg:px-20 xl:px-30">
+      <Section className="mb-12 sm:px-10 lg:px-20 xl:px-30">
         {/* Mission — primary blue */}
         <div className="mb-12">
           <Heading level={2}>Our Mission</Heading>

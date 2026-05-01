@@ -9,11 +9,13 @@ interface AllenData {
   name: string;
   province: string;
   description: string;
+  card_description: string;
 }
 
 interface BetterGovData {
   name: string;
   description: string;
+  card_description: string;
 }
 
 const allen = yaml.load(allenYaml) as AllenData;
@@ -21,8 +23,8 @@ const bettergov = yaml.load(betterGovYaml) as BetterGovData;
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="px-6 py-16 bg-gray-50 sm:px-10 lg:px-20 xl:px-30">
-      <div className="mb-10">
+    <section className="px-4 py-12 bg-gray-50 sm:px-10 lg:px-20 xl:px-30">
+      <div className="mb-8">
         <Text className="mb-1 text-xs font-bold tracking-widest uppercase text-primary-500 max-w-none">
           Get to Know Us
         </Text>
@@ -35,7 +37,7 @@ const AboutSection: React.FC = () => {
         </Text>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="flex flex-col gap-4 sm:grid sm:grid-cols-2 sm:gap-6">
         {/* Allen Card */}
         <div className="flex flex-col justify-between p-8 transition-all duration-200 bg-white border border-gray-200 shadow-sm rounded-2xl hover:border-primary-300 hover:shadow-md">
           <div>
@@ -63,7 +65,7 @@ const AboutSection: React.FC = () => {
               {allen.name}, {allen.province}
             </Heading>
             <Text className="text-sm leading-relaxed text-gray-500 max-w-none">
-              {allen.description}
+              {allen.card_description}
             </Text>
           </div>
           <Link
@@ -109,7 +111,7 @@ const AboutSection: React.FC = () => {
               {bettergov.name}
             </Heading>
             <Text className="text-sm leading-relaxed text-primary-100 max-w-none">
-              {bettergov.description}
+              {bettergov.card_description}
             </Text>
           </div>
           <Link

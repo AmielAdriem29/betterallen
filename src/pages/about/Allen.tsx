@@ -64,7 +64,7 @@ const AboutAllen: React.FC = () => {
         </div>
       </div>
 
-      <Section className="p-1 px-6 mb-12 sm:px-10 lg:px-20 xl:px-30">
+      <Section className="mb-12 sm:px-10 lg:px-20 xl:px-30">
         {/* Key Statistics */}
         <div className="mb-5">
           <div className="grid grid-cols-2 gap-4 p-2 sm:flex sm:flex-row sm:justify-center">
